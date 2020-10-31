@@ -6,10 +6,10 @@ module.exports = function repeater(str, options) {
   let sep = '';
   let addSep = '';
   if (str === null) {
-    str = 'null';
+    str = `${str}`;
   }
   if (options.addition === null) {
-    options.addition = 'null';
+    options.addition = `${options.addition}`;
   }
   if (options.separator === undefined) {
     sep = '+';
