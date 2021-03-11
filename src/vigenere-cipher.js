@@ -10,11 +10,13 @@ class VigenereCipheringMachine {
     } else {
       if (key.length < message.length) {
         for (let i=0; i<message.length; i++) {
-          key += key[i];
+          key += key[i % key.length];
         }
       }
       key = key.toUpperCase();
-      let mes = message.toUpperCase().match(/[a-z]/gi).join('');
+      let mes = message.toUpperCase().match(/[a-z]/gi);
+      if (mes !== null) {
+        mes = mes.join(''); }
       let rez = '';
       let n=0;
       for (let i=0; i<message.length; i++) {     
@@ -39,11 +41,13 @@ class VigenereCipheringMachine {
     } else {
       if (key.length < message.length) {
         for (let i=0; i<message.length; i++) {
-          key += key[i];
+          key += key[i % key.length];
         }
       }
       key = key.toUpperCase();
-      let mes = message.toUpperCase().match(/[a-z]/gi).join('');
+      let mes = message.toUpperCase().match(/[a-z]/gi);
+      if (mes !== null) {
+        mes = mes.join(''); }
       let rez = '';
       let n=0;
       for (let i=0; i<message.length; i++) {     
